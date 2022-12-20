@@ -1,0 +1,54 @@
+{
+    "name": "elegasoft/product-version",
+    "description": "Package for managing the semver for the repository",
+    "keywords": [
+        "elegasoft",
+        "product-version"
+    ],
+    "homepage": "https://github.com/elegasoft/product-version",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jason Cook",
+            "email": "jason@elegasoft.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0",
+        "symfony/process": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Elegasoft\\ProductVersion\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elegasoft\\ProductVersion\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Elegasoft\\ProductVersion\\ProductVersionServiceProvider"
+            ],
+            "aliases": {
+                "ProductVersion": "Elegasoft\\ProductVersion\\ProductVersionFacade"
+            }
+        }
+    }
+}
